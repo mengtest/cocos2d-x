@@ -58,8 +58,8 @@ bool GameScene::init()
 	spFood = SnakeNode::create(SnakeNode::NODE_TYPE::TYPE_FOOD);
 	//spHead->setAnchorPoint(Vec2::ZERO);
 	//spFood->setAnchorPoint(Vec2::ZERO);
-	spHead->setPosition(Vec2(rand() % 20, rand() % 20) * 20);
-	spFood->setPosition(Vec2(rand() % 20, rand() % 20) * 20);
+	spHead->setPosition((Vec2(rand() % 20, rand() % 20) * 20)+Vec2(10,10));
+	spFood->setPosition((Vec2(rand() % 20, rand() % 20) * 20) + Vec2(10, 10));
 	addChild(spHead);
 	addChild(spFood);
 
@@ -173,7 +173,7 @@ void GameScene::gameLogic(float t)
 		ss << "SCORE " << m_score;
 		dynamic_cast<Label*>(getChildByTag(0x11))->setString(ss.str());
 		newBody();
-		spFood->setPosition(Vec2(rand() % 20, rand() % 20) * 20);
+		spFood->setPosition((Vec2(rand() % 20, rand() % 20) * 20) + Vec2(10, 10));
 	}
 }
 
